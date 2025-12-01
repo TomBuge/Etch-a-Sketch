@@ -22,7 +22,7 @@ function makeGrids(num) {
 function addGridColor()  {
 
     const grids = document.querySelectorAll(".grid");
-    
+    let opacity = 0.05;
 
     grids.forEach(grid => {
         const r = Math.floor(Math.random() * 256);
@@ -30,7 +30,9 @@ function addGridColor()  {
         const b = Math.floor(Math.random() * 256);
         const rgb = `rgb(${r}, ${g}, ${b})`;
         grid.addEventListener("mouseenter", (e) => {
+            opacity += 0.1;
             grid.style.background = rgb;
+            grid.style.opacity = opacity;
         })
         
     });
